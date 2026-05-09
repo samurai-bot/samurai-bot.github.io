@@ -1189,21 +1189,28 @@ img { max-width: 100%; display: block; }
   .resume__lede { font-size: 10pt; }
   .role__title { font-size: 11.5pt; }
   .role__when, .role__org { font-size: 8.5pt; }
-  /* Force pure-black + heavier weight on small mono labels — they read thin in PDF */
+  /* Force pure-black on every text element — Safari respects -webkit-text-fill-color
+     even when its print engine downsamples colors. The text-shadow trick re-renders
+     glyphs as solid black regardless of color-adjust mode. */
+  .resume,
+  .resume * {
+    color: #000 !important;
+    -webkit-text-fill-color: #000 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
   .role__when {
     color: #000 !important;
-    font-weight: 600 !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+    -webkit-text-fill-color: #000 !important;
+    font-weight: 700 !important;
   }
-  .role__org { color: #000 !important; }
-  .resume__hint { color: #000 !important; font-weight: 500 !important; }
-  .resume__contact li::after { color: #000 !important; }
-  .resume__contact { color: #000 !important; }
-  .role__points, .role__points li, .resume__skills p, .resume__skills dl, .resume__skills dd,
-  .skill__list, .skill__list li, .resume__edu, .resume__edu li, .resume__lede {
-    color: #000 !important;
-  }
+  .role__org { font-style: italic; }
+  .resume__hint { font-weight: 600 !important; }
+  /* Keep accent only on H2 section headers and the site link for one bit of color */
+  .resume__h2 { color: #1a3aff !important; -webkit-text-fill-color: #1a3aff !important; }
+  .resume__title { color: #1a3aff !important; -webkit-text-fill-color: #1a3aff !important; }
+  .resume__skills h3 { color: #1a3aff !important; -webkit-text-fill-color: #1a3aff !important; }
+  .resume__contact .resume__site { color: #1a3aff !important; -webkit-text-fill-color: #1a3aff !important; font-weight: 700 !important; }
   .role__points, .resume__skills p, .resume__skills dl, .skill__list, .resume__edu { font-size: 9pt; }
   .resume__skills h3 { font-size: 7.5pt; padding-bottom: 2pt; }
   .resume__skills { gap: 8pt 14pt; }
