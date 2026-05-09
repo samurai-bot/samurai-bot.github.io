@@ -184,21 +184,33 @@ img { max-width: 100%; display: block; }
 .topbar__cta,
 .topbar__cta:link,
 .topbar__cta:visited {
-  display: inline-flex; align-items: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2rem;
+  line-height: 1;
+  white-space: nowrap;
   border: 1px solid var(--ink) !important;
-  padding: .5rem 1rem;
+  padding: 0 1.25rem;
   border-radius: 999px;
   background: var(--ink) !important;
   color: var(--paper-soft) !important;
   font-weight: 500;
   letter-spacing: .06em;
+  font-family: inherit;
 }
 .topbar__cta:hover, .topbar__cta:focus-visible {
   background: var(--accent) !important;
   border-color: var(--accent) !important;
   color: #ffffff !important;
 }
-.topbar__cta--button { font-family: var(--mono); font-size: .8rem; }
+.topbar__cta--button {
+  font-family: var(--mono);
+  font-size: .8rem;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
 @media (max-width: 720px) {
   .topbar { padding: .75rem 1rem; gap: 1rem; }
   .topbar__nav { gap: .85rem; font-size: .72rem; }
@@ -998,6 +1010,13 @@ img { max-width: 100%; display: block; }
 .resume__contact li:last-child::after { content: ""; }
 .resume__contact a { border-bottom: 1px solid var(--rule-soft); }
 .resume__contact a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.resume__contact .resume__site {
+  font-weight: 600;
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+  letter-spacing: .06em;
+}
+.resume__contact .resume__site:hover { color: var(--ink); border-bottom-color: var(--ink); }
 
 .resume__section {
   margin-top: 2.4rem;
@@ -1069,15 +1088,70 @@ img { max-width: 100%; display: block; }
 
 .resume__skills {
   display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.2rem 2rem;
+  gap: 1.4rem 2.2rem;
 }
 @media (max-width: 700px) { .resume__skills { grid-template-columns: 1fr; } }
+
 .resume__skills h3 {
-  font-family: var(--mono); font-size: .72rem; letter-spacing: .1em;
-  text-transform: uppercase; color: var(--ink-mute);
-  margin: 0 0 .45rem;
+  font-family: var(--mono); font-size: .72rem; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--accent);
+  margin: 0 0 .55rem;
+  padding-bottom: .35rem;
+  border-bottom: 1px dotted var(--rule-soft);
 }
-.resume__skills p { margin: 0; font-size: .94rem; color: var(--ink-soft); }
+
+.resume__skills p { margin: 0; font-size: .94rem; color: var(--ink-soft); line-height: 1.5; }
+
+.resume__skills .skill { break-inside: avoid; }
+
+.resume__skills dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: minmax(120px, max-content) 1fr;
+  gap: .35rem .8rem;
+  font-size: .92rem;
+  line-height: 1.45;
+}
+.resume__skills dt {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ink);
+  font-variation-settings: "opsz" 30, "SOFT" 80;
+  font-weight: 480;
+}
+.resume__skills dd {
+  margin: 0;
+  color: var(--ink-soft);
+}
+.resume__skills dd a {
+  border-bottom: 1px solid var(--rule-soft);
+}
+
+.skill__lead {
+  margin: 0 0 .5rem !important;
+  font-size: .9rem !important;
+  color: var(--ink-mute) !important;
+}
+.skill__list {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .25rem .8rem;
+  font-size: .92rem; color: var(--ink-soft);
+}
+.skill__list li {
+  position: relative; padding-left: .9rem;
+}
+.skill__list li::before {
+  content: "▸";
+  position: absolute; left: 0; top: 0;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: .7em;
+  top: .15em;
+}
+@media (max-width: 700px) {
+  .skill__list { grid-template-columns: 1fr; }
+}
 
 .resume__edu { list-style: none; padding: 0; margin: 0; display: grid; gap: .5rem; font-size: .96rem; color: var(--ink-soft); }
 .resume__edu strong { color: var(--ink); font-weight: 600; }
@@ -1106,7 +1180,11 @@ img { max-width: 100%; display: block; }
   .resume__lede { font-size: 10pt; }
   .role__title { font-size: 11.5pt; }
   .role__when, .role__org { font-size: 8.5pt; }
-  .role__points, .resume__skills p, .resume__edu { font-size: 9pt; }
+  .role__points, .resume__skills p, .resume__skills dl, .skill__list, .resume__edu { font-size: 9pt; }
+  .resume__skills h3 { font-size: 7.5pt; padding-bottom: 2pt; }
+  .resume__skills { gap: 8pt 14pt; }
+  .resume__skills dl { grid-template-columns: minmax(80pt, max-content) 1fr; gap: 2pt 8pt; }
+  .skill__list { gap: 2pt 10pt; }
   .role { margin-bottom: 12pt; }
   .resume__section { margin-top: 14pt; }
   a { color: var(--ink) !important; border-bottom-color: var(--rule-soft) !important; }
