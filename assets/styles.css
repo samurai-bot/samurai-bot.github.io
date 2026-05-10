@@ -319,7 +319,7 @@ img { max-width: 100%; display: block; }
   color: var(--ink-soft);
 }
 
-/* portrait — magazine duotone */
+/* portrait — illustrated bust floating free on paper */
 .portrait {
   margin: 0;
   position: relative;
@@ -327,26 +327,12 @@ img { max-width: 100%; display: block; }
 }
 .portrait img {
   width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: center 28%;
-  filter: grayscale(1) contrast(1.05) brightness(.96);
-  border: 1px solid var(--rule);
-  background: var(--paper-deep);
+  height: auto;
   display: block;
-  transition: filter .6s var(--easing);
 }
-.portrait::after {
-  /* duotone wash */
-  content: "";
-  position: absolute; inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(180deg, rgba(26,58,255,.18), rgba(196,66,26,.12) 70%, rgba(245,239,226,0));
-  mix-blend-mode: multiply;
-  border: 1px solid transparent;
+@media (max-width: 720px) {
+  .portrait { max-width: 320px; margin-inline: auto; }
 }
-.portrait:hover img { filter: grayscale(0) contrast(1) brightness(1); }
 
 .portrait figcaption {
   position: absolute;
