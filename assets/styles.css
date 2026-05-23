@@ -1215,6 +1215,48 @@ img { max-width: 100%; display: block; }
   .skill__list { grid-template-columns: 1fr; }
 }
 
+.projects {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; gap: .85rem;
+}
+.project {
+  display: grid; gap: .18rem;
+  padding-left: .6rem;
+  border-left: 2px solid var(--rule-soft);
+}
+.project__name {
+  margin: 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+  font-variation-settings: "opsz" 30, "SOFT" 80;
+  font-size: 1rem;
+  color: var(--ink);
+  line-height: 1.2;
+}
+.project__desc {
+  margin: 0 !important;
+  font-size: .88rem !important;
+  color: var(--ink-soft) !important;
+  line-height: 1.45 !important;
+}
+.project__links {
+  margin: .1rem 0 0 !important;
+  font-family: var(--mono);
+  font-size: .72rem !important;
+  letter-spacing: .04em;
+  color: var(--ink-mute) !important;
+}
+.project__links a {
+  color: var(--ink-mute);
+  border-bottom: 1px solid var(--rule-soft);
+}
+.project__links a:hover { color: var(--ink); }
+.project__sep {
+  margin: 0 .35rem;
+  color: var(--rule);
+}
+
 .resume__edu { list-style: none; padding: 0; margin: 0; display: grid; gap: .5rem; font-size: .96rem; color: var(--ink-soft); }
 .resume__edu strong { color: var(--ink); font-weight: 600; }
 
@@ -1278,6 +1320,11 @@ img { max-width: 100%; display: block; }
   .resume__skills { gap: 8pt 14pt; }
   .resume__skills dl { grid-template-columns: minmax(80pt, max-content) 1fr; gap: 2pt 8pt; }
   .skill__list { gap: 2pt 10pt; }
+  .projects { gap: 5pt; }
+  .project { padding-left: 5pt; }
+  .project__name { font-size: 9.5pt; }
+  .project__desc { font-size: 8.5pt !important; }
+  .project__links { font-size: 7pt !important; }
   .role { margin-bottom: 12pt; }
   .resume__section { margin-top: 14pt; }
   a { color: var(--ink) !important; border-bottom-color: var(--rule-soft) !important; }
