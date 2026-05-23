@@ -1215,47 +1215,31 @@ img { max-width: 100%; display: block; }
   .skill__list { grid-template-columns: 1fr; }
 }
 
-.projects {
+.resume__work {
   list-style: none; padding: 0; margin: 0;
-  display: grid; gap: .85rem;
+  display: grid; gap: .75rem;
+  font-size: .96rem; color: var(--ink-soft);
 }
-.project {
-  display: grid; gap: .18rem;
-  padding-left: .6rem;
-  border-left: 2px solid var(--rule-soft);
-}
-.project__name {
-  margin: 0;
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 500;
-  font-variation-settings: "opsz" 30, "SOFT" 80;
-  font-size: 1rem;
+.work { display: grid; gap: .15rem; }
+.work__line { margin: 0; line-height: 1.45; }
+.work__name {
   color: var(--ink);
-  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: .005em;
 }
-.project__desc {
-  margin: 0 !important;
-  font-size: .88rem !important;
-  color: var(--ink-soft) !important;
-  line-height: 1.45 !important;
-}
-.project__links {
-  margin: .1rem 0 0 !important;
+.work__links {
+  margin: 0;
   font-family: var(--mono);
-  font-size: .72rem !important;
+  font-size: .74rem;
   letter-spacing: .04em;
-  color: var(--ink-mute) !important;
+  color: var(--ink-mute);
 }
-.project__links a {
+.work__links a {
   color: var(--ink-mute);
   border-bottom: 1px solid var(--rule-soft);
 }
-.project__links a:hover { color: var(--ink); }
-.project__sep {
-  margin: 0 .35rem;
-  color: var(--rule);
-}
+.work__links a:hover { color: var(--ink); }
+.work__sep { margin: 0 .4rem; color: var(--rule); }
 
 .resume__edu { list-style: none; padding: 0; margin: 0; display: grid; gap: .5rem; font-size: .96rem; color: var(--ink-soft); }
 .resume__edu strong { color: var(--ink); font-weight: 600; }
@@ -1320,11 +1304,8 @@ img { max-width: 100%; display: block; }
   .resume__skills { gap: 8pt 14pt; }
   .resume__skills dl { grid-template-columns: minmax(80pt, max-content) 1fr; gap: 2pt 8pt; }
   .skill__list { gap: 2pt 10pt; }
-  .projects { gap: 5pt; }
-  .project { padding-left: 5pt; }
-  .project__name { font-size: 9.5pt; }
-  .project__desc { font-size: 8.5pt !important; }
-  .project__links { font-size: 7pt !important; }
+  .resume__work { font-size: 9pt; gap: 5pt; }
+  .work__links { font-size: 7pt; }
   .role { margin-bottom: 12pt; }
   .resume__section { margin-top: 14pt; }
   a { color: var(--ink) !important; border-bottom-color: var(--rule-soft) !important; }
