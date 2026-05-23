@@ -8,6 +8,7 @@ resume-source.html
 
 # OS / editor
 .DS_Store
+._*
 Thumbs.db
 *.swp
 *.swo
